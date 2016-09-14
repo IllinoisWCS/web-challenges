@@ -1,4 +1,4 @@
-# Web Part I Skeleton
+# Web Part I Challenges
 
 We've provided 2 files:
 - index.html - this is where all of your HTML code will go
@@ -10,6 +10,6 @@ You'll need:
 - A web browser (Chrome, Firefox, etc.)
 - A text editor, preferably with syntax highlighting (Notepad++, Sublime Text, Atom)
 
-If you would like to check out the completed sample, our repository is called web-complete.
+These files include the example solutions but allow for you to figure out the solutions for the challenges.
 
 Our slides are at illinoiswcs.org/tutorials/web-intro. 
