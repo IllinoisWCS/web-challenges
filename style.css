@@ -1,7 +1,7 @@
 /* Text */
 /* Add your styling for your text here */
 h1, h2, h3, h4, h5, h6 {
-    /* Let's add a font for our headings */
+    font-family: 'Roboto Slab', sans-serif;
 }
 
 p, * {
@@ -24,8 +24,58 @@ nav {
 }
 
 /* Add more nav bar attributes and styling here */
+nav h1 {
+    margin-top: 15px;
+    float: left;
+    color: #888888;
+    font-size: 1.5em;
+}
+
+#navbar-list {
+    margin-top: 15px;
+    padding: 0;
+    float: right;
+    list-style: none;
+    display: inline-block;
+    width: auto;
+}
+
+#nav-list li {
+    float: left;
+    padding-right: 25px;
+    padding-left: 25px;
+    position: relative;
+    display: block;
+    font-size: 1em;
+    line-height: 1.4;
+}
 
 /* Add scroll link attributes here */
+a.scroll-link {
+    text-decoration: none;
+    color: blue;
+}
+
+a.scroll-link:hover {
+    color: red;
+}
 
 /* Content */
 /* Add some styling for your content here */
+#content {
+    margin-top: 100px;
+}
+
+#content > section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#gallery > img {
+    width: 100%;
+}
+
+/* Cool Button */
+#cool-button {
+    background-color: #aaaaaa;
+}

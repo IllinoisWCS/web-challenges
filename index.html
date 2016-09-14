@@ -13,9 +13,25 @@
 <body>
     <!-- Build your navigation bar here -->
     <nav>
+        <h1>Name</h1>
+        <ul id="nav-list">
+            <li><a class="scroll-link" href="#about">About</a></li>
+            <li><a class="scroll-link" href="#gallery">Gallery</a></li>
+        </ul>
     </nav>
     <!-- Build your content here -->
     <div id="content">
+        <section id="about">
+            <h1 align="center">About Me</h1>
+            <p>Here's where I write something about myself.</p>
+            <!-- Example 1: Add a paragraph. Then within it, add a span with an id of "liked-item". Put something you like within the span. -->
+            <p>I really like <span id="liked-item">coffee</span>.</p>
+            <h4>Top 3 facts about me:</h4>
+            <ol id="fact-list">
+                <li class="list-item">I'm currently a <b>[year]</b> at UIUC.</li>
+                <li class="list-item">I'm from <em>[town]</em>.</li>
+                <li class="list-item">I study [major].</li>
+            </ol>
         <!-- Example 1: Add a paragraph. Then within it, add a span with an id of "liked-item". Put something you like within the span. -->
         <!-- Challenge 1: Add a button with an id of "cool-button" -->
         <!-- Challenge 2: Add a paragraph. Inside that paragraph, add a span with an id of "grow-text" -->
@@ -24,14 +40,36 @@
         <!-- Challenge 5: Add an unordered list <ul> with an id of "fly-list" -->
         <!-- Challenge 6: Add a paragraph with a span. Inside that span (which has an id of "bold-text"), write something that you think should be emphasized :D -->
         <!-- Challenge 7: Create a canvas element with an id named "smiley". It should have a width of 150 and a height of 150 -->
+        </section>
+        <section id="gallery">
+            <h1 align="center">Gallery</h1>
+            <img src="image.jpeg"></img>
+        </section>
     </div>
     <!-- jQuery is a Javascript library that seeks to make it easier to manipulate HTML objects (so-called Document Object Model (DOM) object). We'll be using it today as a means of making it easier to type our Javascript code. You are free to intermix ordinary Javascript with jQuery. We'll show you an example of ordinary Javascript vs. jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <!-- Add more Javascript snippets down here -->
-    <!-- This Javascript snippet will take an array of strings and change the header to output one of those strings every 3 seconds -->
-    <script></script>
-    <!-- This Javascript snippet will bind to the click event an animation that imitates smooth scrolling -->
-    <script></script>
+    <!-- Example 1: This Javascript snippet will take an array of strings and change the span with an id of "liked-item" to rotate through the array and display one of those strings every 3 seconds. -->
+    <script>
+        var itemsLiked = ["coffee", "bagels", "cats", "PokemonGo", "sleeping", "coding"];
+        var index = 0;
+        setInterval(function() {
+            var header = document.getElementById("liked-item");
+            index = (index + 1) % itemsLiked.length;
+            header.innerHTML = itemsLiked[index];
+        }, 3000);
+    </script>
+    <!-- Example 2: This Javascript snippet will look for anchor tags <a> with a class of "scroll-link" and bind to their click event an animation that imitates smooth scrolling. -->
+    <script>
+        $("a.scroll-link").bind("click", function(event) {
+            event.stopPropagation();
+            var target = $(this).attr("href");
+            $('html, body').animate({
+                scrollTop: $(target).offset().top - 80
+            }, 1000);
+            return false;
+        });
+    </script>
     <!-- Challenge 1: This Javascript snippet will change the color of a button when it is hovered over or clicked on. Do this for "cool-button -->
     <!-- Hint: jQuery has hover and click functions, each of which take some functions as parameters -->
     <!-- Hint: hover takes 2 functions as parameters, the first is supposed to handle when the mouse moves onto the button, and the second is supposed to handle when the mouse moves off of the button -->
